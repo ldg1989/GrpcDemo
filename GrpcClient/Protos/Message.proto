@@ -1,0 +1,28 @@
+﻿syntax="proto3";
+
+option csharp_namespace="GrpcServer.Proto";
+
+message Employee{
+  int32  id=1;
+  int32 age=2;
+  int32 no=3;
+  string name=4;
+  float salary=5;
+}
+  
+message GetByNoRequest{
+  int32 no=1;
+}
+
+message GetResponse{
+  Employee employee=1;
+
+}
+
+service GetEmployee{
+
+  rpc GetByNo(GetByNoRequest) returns (GetResponse);
+  
+}
+
+
