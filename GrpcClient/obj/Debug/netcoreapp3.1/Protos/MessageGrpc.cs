@@ -14,12 +14,20 @@ namespace GrpcServer.Proto {
 
     static readonly grpc::Marshaller<global::GrpcServer.Proto.GetByNoRequest> __Marshaller_GetByNoRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Proto.GetByNoRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.Proto.GetResponse> __Marshaller_GetResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Proto.GetResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.Proto.GetAllRequest> __Marshaller_GetAllRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Proto.GetAllRequest.Parser.ParseFrom);
 
     static readonly grpc::Method<global::GrpcServer.Proto.GetByNoRequest, global::GrpcServer.Proto.GetResponse> __Method_GetByNo = new grpc::Method<global::GrpcServer.Proto.GetByNoRequest, global::GrpcServer.Proto.GetResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetByNo",
         __Marshaller_GetByNoRequest,
+        __Marshaller_GetResponse);
+
+    static readonly grpc::Method<global::GrpcServer.Proto.GetAllRequest, global::GrpcServer.Proto.GetResponse> __Method_GetAll = new grpc::Method<global::GrpcServer.Proto.GetAllRequest, global::GrpcServer.Proto.GetResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetAll",
+        __Marshaller_GetAllRequest,
         __Marshaller_GetResponse);
 
     /// <summary>Service descriptor</summary>
@@ -66,6 +74,28 @@ namespace GrpcServer.Proto {
       public virtual grpc::AsyncUnaryCall<global::GrpcServer.Proto.GetResponse> GetByNoAsync(global::GrpcServer.Proto.GetByNoRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetByNo, null, options, request);
+      }
+      /// <summary>
+      /// 获取所有
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.Proto.GetResponse> GetAll(global::GrpcServer.Proto.GetAllRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAll(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// 获取所有
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.Proto.GetResponse> GetAll(global::GrpcServer.Proto.GetAllRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAll, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override GetEmployeeClient NewInstance(ClientBaseConfiguration configuration)

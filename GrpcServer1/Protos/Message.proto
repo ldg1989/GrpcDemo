@@ -19,9 +19,15 @@ message GetResponse{
 
 }
 
-service GetEmployee{
+message GetAllRequest{}
 
+service GetEmployee{
+   //获取一条 
   rpc GetByNo(GetByNoRequest) returns (GetResponse);
+  // 获取所有
+  rpc GetAll(GetAllRequest) returns (stream GetResponse);
+  //
+
   
 }
 

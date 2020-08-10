@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GrpcServer1.Services
 {
-  public class MyEmployeeService:GetEmployee.GetEmployeeBase
+  public class MyEmployeeService : GetEmployee.GetEmployeeBase
   {
     private readonly ILogger<MyEmployeeService> _logger;
     public MyEmployeeService(ILogger<MyEmployeeService> logger)
@@ -19,10 +19,18 @@ namespace GrpcServer1.Services
     {
       return Task.FromResult(new GetResponse()
       {
-        Employee = new Employee() {Id=1,No=1,Name="1213" }
+        Employee = new Employee() { Id = 1, No = 1, Name = "1213" }
       });
     }
 
+    public override Task GetAll(GetAllRequest request, IServerStreamWriter<GetResponse> responseStream, ServerCallContext context)
+    {
+      return Task.FromResult(new GetResponse()
+      {
+        Employee = new Employee() { Id = 1, No = 1, Name = "1213" },
+
+      }) ;
+    }
 
 
   }

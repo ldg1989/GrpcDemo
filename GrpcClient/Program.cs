@@ -14,12 +14,12 @@ namespace GrpcClient
 
       var client = new GetEmployee.GetEmployeeClient(channel);
 
-      var response = await client.GetByNoAsync(new GetByNoRequest
+      var response1 = await client.GetByNoAsync(new GetByNoRequest
       {
         No = 1
       });
 
-
+      var response2 =  client.GetAll(new GetAllRequest { });
 
 
 

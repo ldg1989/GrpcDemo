@@ -18,11 +18,14 @@ message GetResponse{
   Employee employee=1;
 
 }
+message GetAllRequest{}
 
 service GetEmployee{
 
   rpc GetByNo(GetByNoRequest) returns (GetResponse);
-  
+   // 获取所有
+  rpc GetAll(GetAllRequest) returns (stream GetResponse);
+  //
 }
 
 

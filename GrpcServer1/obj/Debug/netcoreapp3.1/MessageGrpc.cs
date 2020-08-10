@@ -14,12 +14,20 @@ namespace GrpcServer.Proto {
 
     static readonly grpc::Marshaller<global::GrpcServer.Proto.GetByNoRequest> __Marshaller_GetByNoRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Proto.GetByNoRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.Proto.GetResponse> __Marshaller_GetResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Proto.GetResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.Proto.GetAllRequest> __Marshaller_GetAllRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.Proto.GetAllRequest.Parser.ParseFrom);
 
     static readonly grpc::Method<global::GrpcServer.Proto.GetByNoRequest, global::GrpcServer.Proto.GetResponse> __Method_GetByNo = new grpc::Method<global::GrpcServer.Proto.GetByNoRequest, global::GrpcServer.Proto.GetResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetByNo",
         __Marshaller_GetByNoRequest,
+        __Marshaller_GetResponse);
+
+    static readonly grpc::Method<global::GrpcServer.Proto.GetAllRequest, global::GrpcServer.Proto.GetResponse> __Method_GetAll = new grpc::Method<global::GrpcServer.Proto.GetAllRequest, global::GrpcServer.Proto.GetResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetAll",
+        __Marshaller_GetAllRequest,
         __Marshaller_GetResponse);
 
     /// <summary>Service descriptor</summary>
@@ -32,7 +40,25 @@ namespace GrpcServer.Proto {
     [grpc::BindServiceMethod(typeof(GetEmployee), "BindService")]
     public abstract partial class GetEmployeeBase
     {
+      /// <summary>
+      ///获取一条 
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::GrpcServer.Proto.GetResponse> GetByNo(global::GrpcServer.Proto.GetByNoRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// 获取所有
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="responseStream">Used for sending responses back to the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>A task indicating completion of the handler.</returns>
+      public virtual global::System.Threading.Tasks.Task GetAll(global::GrpcServer.Proto.GetAllRequest request, grpc::IServerStreamWriter<global::GrpcServer.Proto.GetResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -44,7 +70,8 @@ namespace GrpcServer.Proto {
     public static grpc::ServerServiceDefinition BindService(GetEmployeeBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetByNo, serviceImpl.GetByNo).Build();
+          .AddMethod(__Method_GetByNo, serviceImpl.GetByNo)
+          .AddMethod(__Method_GetAll, serviceImpl.GetAll).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -54,6 +81,7 @@ namespace GrpcServer.Proto {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, GetEmployeeBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetByNo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.Proto.GetByNoRequest, global::GrpcServer.Proto.GetResponse>(serviceImpl.GetByNo));
+      serviceBinder.AddMethod(__Method_GetAll, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.Proto.GetAllRequest, global::GrpcServer.Proto.GetResponse>(serviceImpl.GetAll));
     }
 
   }

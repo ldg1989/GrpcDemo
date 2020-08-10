@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\githubcode\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj": {}
+    "D:\\github\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj": {}
   },
   "projects": {
-    "F:\\githubcode\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj": {
+    "D:\\github\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\githubcode\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj",
+        "projectUniqueName": "D:\\github\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj",
         "projectName": "GrpcServer1",
-        "projectPath": "F:\\githubcode\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj",
-        "packagesPath": "C:\\Users\\LDG\\.nuget\\packages\\",
-        "outputPath": "F:\\githubcode\\GrpcDemo\\GrpcServer1\\obj\\",
+        "projectPath": "D:\\github\\GrpcDemo\\GrpcServer1\\GrpcServer1.csproj",
+        "packagesPath": "C:\\Users\\64148\\.nuget\\packages\\",
+        "outputPath": "D:\\github\\GrpcDemo\\GrpcServer1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\LDG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\64148\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
