@@ -22,6 +22,7 @@ namespace GrpcClient
       var response2 =  client.GetAll(new GetAllRequest { });
 
 
+      
 
       Console.WriteLine("Hello World!");
     }

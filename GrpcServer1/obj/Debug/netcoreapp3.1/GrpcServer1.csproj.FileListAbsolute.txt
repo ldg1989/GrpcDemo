@@ -53,4 +53,3 @@ D:\github\GrpcDemo\GrpcServer1\obj\Debug\netcoreapp3.1\staticwebassets\GrpcServe
 D:\github\GrpcDemo\GrpcServer1\obj\Debug\netcoreapp3.1\GrpcServer1.dll
 D:\github\GrpcDemo\GrpcServer1\obj\Debug\netcoreapp3.1\GrpcServer1.pdb
 D:\github\GrpcDemo\GrpcServer1\obj\Debug\netcoreapp3.1\GrpcServer1.genruntimeconfig.cache
-D:\github\GrpcDemo\GrpcServer1\obj\Debug\netcoreapp3.1\GrpcServer1.csprojAssemblyReference.cache
